@@ -1,0 +1,47 @@
+================================================================
+                LICENSE AGREEMENT - Light UPS
+================================================================
+
+1. OPEN SOURCE PROVISIONS
+-------------------------
+Light UPS is free software: you can redistribute it and/or modify 
+it under the terms of the GNU Affero General Public License as 
+published by the Free Software Foundation, either version 3 of 
+the License, or (at your option) any later version.
+
+2. SOURCE CODE AVAILABILITY
+---------------------------
+In accordance with the AGPLv3, the complete source code for this 
+application is publicly available. You can find the repository, 
+contribute, or audit the code at:
+https://github.com/Light-Ups/LightUps
+
+3. THIRD-PARTY COMPONENTS (Qt 6.9)
+----------------------------------
+This software uses the Qt Framework version 6.9, licensed under 
+the GNU Lesser General Public License (LGPL) v3. 
+
+- The Qt libraries are included as unmodified, dynamically linked 
+  shared libraries (DLLs).
+- You are permitted to replace these libraries with your own 
+  compatible versions of Qt.
+- The Qt source code is available at https://www.qt.io.
+
+4. NO WARRANTY
+--------------
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES.
+
+5. REVERSE ENGINEERING AND MODIFICATIONS
+----------------------------------------
+You are encouraged to modify, improve, and study the software. 
+The right to reverse engineer for the purpose of debugging 
+modifications is explicitly granted under the terms of the 
+AGPLv3 and LGPLv3.
+
+================================================================

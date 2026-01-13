@@ -1,0 +1,14 @@
+{
+    "project_info": {
+        "name": "LightUps",
+        "copyright": "Copyright (C) 2026 Andreas Hoogendoorn (@andhoo)",
+        "license": "GNU Affero General Public License v3.0",
+        "url": "https://www.gnu.org/licenses/agpl-3.0.html"
+      },
+    "IID": "com.yourcompany.UpsMonitoring.IUpsDriver/1.0",
+    "displayName": "NHS UPS Driver",
+    "portType" : "serial",
+    "version": 100,
+    "vendor": "Light Ups",
+    "className": "Nhs_driver"
+}

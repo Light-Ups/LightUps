@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Light UPS Monitor &amp; Service</DisplayName>
+    <Description>Installs the background service and the tray application.</Description>
+    <Version>1.0.0</Version>
+<!-- <ForcedInstallation>true</ForcedInstallation> -->
+	<ReleaseDate>2026-01-14</ReleaseDate>
+    <Default>true</Default>
+    <Script>installscript.js</Script>
+    <Licenses>
+        <License name="Gebruikersovereenkomst (EULA)" file="license.txt" />
+    </Licenses>
+</Package>

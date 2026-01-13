@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file>ups_status.svg</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>

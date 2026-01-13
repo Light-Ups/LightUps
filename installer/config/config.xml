@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Light UPS Monitor</Name>
+    <!-- <ModifyDefault>false</ModifyDefault> -->
+    <SupportsModify>false</SupportsModify>
+    <RepositorySettingsPageVisible>false</RepositorySettingsPageVisible>
+    <WizardStyle>Classic</WizardStyle>
+    <Version>1.0.0</Version>
+    <ControlScript>controller.qs</ControlScript>
+    <Title>LightUPS v1.0.0</Title>
+    <Publisher>Light Ups</Publisher>
+    <ProductUrl>https://github.com/Light-Ups/LightUps</ProductUrl>
+    <!-- <InstallerApplicationIcon>icoon</InstallerApplicationIcon> -->
+	<!-- <InstallerWindowIcon>icoon.png</InstallerWindowIcon> -->
+    <StartMenuDir>Light UPS</StartMenuDir>
+    <TargetDir>@ApplicationsDir@/LightUPS</TargetDir>
+    <MaintenanceToolName>MaintenanceTool</MaintenanceToolName>
+</Installer>

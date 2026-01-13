@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UpsStatusWindow</class>
+ <widget class="QWidget" name="UpsStatusWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UPS Status &amp; Configuration</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainVerticalLayout">
+   <item>
+    <layout class="QGridLayout" name="m_layout">
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="dataHeader">
+       <property name="text">
+        <string>&lt;b&gt;UPS Operational Data&lt;/b&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelStatus">
+       <property name="text">
+        <string>Current Status:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="m_statusLabel">
+       <property name="text">
+        <string>Waiting for data...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelInput">
+       <property name="text">
+        <string>Input Voltage:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="m_inputVoltageLabel">
+       <property name="text">
+        <string>0.0 V</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelOutput">
+       <property name="text">
+        <string>Output Voltage:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="m_outputVoltageLabel">
+       <property name="text">
+        <string>0.0 V</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelBattery">
+       <property name="text">
+        <string>Battery Voltage:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="m_batteryVoltageLabel">
+       <property name="text">
+        <string>0.0 V</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QLabel" name="serviceHeader">
+       <property name="text">
+        <string>&lt;hr&gt;&lt;b&gt;Service Status&lt;/b&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelActiveDriver">
+       <property name="text">
+        <string>Active Driver:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="m_activeDriverNameLabel">
+       <property name="text">
+        <string>None</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="labelActivePort">
+       <property name="text">
+        <string>Active Port:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLabel" name="m_activeComPortLabel">
+       <property name="text">
+        <string>N/A</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" colspan="2">
+      <widget class="QLabel" name="settingsHeader">
+       <property name="text">
+        <string>&lt;hr&gt;&lt;b&gt;Settings&lt;/b&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="labelSetDriver">
+       <property name="text">
+        <string>Driver:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QComboBox" name="m_driverComboBox"/>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="labelSetPort">
+       <property name="text">
+        <string>COM Port:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QComboBox" name="m_comPortComboBox"/>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="labelSetDelay">
+       <property name="text">
+        <string>Shutdown Delay:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QSpinBox" name="m_shutdownDelaySpinBox">
+       <property name="suffix">
+        <string> sec</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0" colspan="2">
+      <widget class="QCheckBox" name="m_powerSafeCheckBox">
+       <property name="text">
+        <string>Enable Power Safe Mode on power loss</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0" colspan="2">
+      <widget class="QPushButton" name="m_saveSettingsButton">
+       <property name="text">
+        <string>Apply Settings</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelRaw">
+     <property name="text">
+      <string>&lt;b&gt;Real-time Raw Data&lt;/b&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="m_rawDataLog">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="maximumBlockCount">
+      <number>100</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="m_closeButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
