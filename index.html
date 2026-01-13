@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightUps - Smart UPS Monitoring</title>
+    <style>
+        :root { --primary: #0078d4; --dark: #1a1a1a; --light: #f5f5f5; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 4rem 2rem; text-align: center; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
+        .btn:hover { opacity: 0.9; }
+        section { margin-bottom: 3rem; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        code { background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px; }
+        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LightUps</h1>
+    <p>A lightweight, open-source UPS monitoring service for Windows.</p>
+    <a href="https://github.com/Light-Ups/LightUps/releases" class="btn">Download Latest Version</a>
+</header>
+
+<div class="container">
+    <section>
+        <h2>About the Project</h2>
+        <p>LightUps is a dedicated Windows Service and GUI application designed to monitor your Uninterruptible Power Supply (UPS) status. It logs events to the Windows Event Log and ensures your system stays safe during power outages.</p>
+    </section>
+
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Windows Service:</strong> Runs in the background without needing a user to be logged in.</li>
+            <li><strong>Event Logging:</strong> Integrated with the Windows Event Viewer for professional logging.</li>
+            <li><strong>GUI Monitor:</strong> A clean interface to see real-time status.</li>
+            <li><strong>Auto-Update:</strong> Built-in support for updates via the Maintenance Tool.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Open Source & License</h2>
+        <p>This project is licensed under the <strong>AGPL v3</strong>. We believe in transparency and community-driven development.</p>
+        <p>Source code is available at: <a href="https://github.com/Light-Ups/LightUps">github.com/Light-Ups/LightUps</a></p>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 LightUps Project. Built with Qt 6.9 and ❤️ for Open Source.
+</footer>
+
+</body>
+</html>
