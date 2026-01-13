@@ -12,8 +12,11 @@
         .btn { display: inline-block; background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
         .btn:hover { opacity: 0.9; }
         section { margin-bottom: 3rem; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        code { background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px; }
+        code { background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px; font-family: 'Consolas', monospace; }
+        .screenshot { width: 100%; border-radius: 5px; margin-top: 1rem; border: 1px solid #ddd; }
         footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
+        ol { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
@@ -28,6 +31,26 @@
     <section>
         <h2>About the Project</h2>
         <p>LightUps is a dedicated Windows Service and GUI application designed to monitor your Uninterruptible Power Supply (UPS) status. It logs events to the Windows Event Log and ensures your system stays safe during power outages.</p>
+    </section>
+
+    <section>
+        <h2>Deployment Configuration (Qt 6.9)</h2>
+        <p>To build the installer for LightUps using the Qt Installer Framework, follow these steps in the <strong>Projects > Deploy Settings</strong> tab of Qt Creator:</p>
+        
+        <ol>
+            <li><strong>CMake Install Step:</strong> Ensure the <code>install</code> target is selected. This ensures that all binaries and assets are moved to the correct staging directory before the installer is created.</li>
+            <li><strong>Custom Process Step:</strong> Add a new "Custom Process Step" to invoke the <code>binarycreator.exe</code>.</li>
+            <li><strong>Command:</strong> Point this to your Qt Installer Framework path: <br> 
+                <code>C:\Qt\Tools\QtInstallerFramework\4.10\bin\binarycreator.exe</code></li>
+            <li><strong>Arguments:</strong> Use the following arguments to create an offline installer: <br>
+                <code>--offline-only -c config\config.xml -p packages lightups.exe</code></li>
+            <li><strong>Working Directory:</strong> Set this to your installer source folder: <br>
+                <code>%{ActiveProject:NativePath}\installer</code></li>
+        </ol>
+
+        <p>This configuration automates the creation of the <code>lightups.exe</code> installer every time you trigger a "Deploy" within Qt Creator.</p>
+        
+        <img src="image_7109e4.png" alt="Qt Creator Deploy Settings" class="screenshot">
     </section>
 
     <section>
