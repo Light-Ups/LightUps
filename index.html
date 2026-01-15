@@ -5,73 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LightUps - Smart UPS Monitoring</title>
     <style>
-        :root { --primary: #0078d4; --dark: #1a1a1a; --light: #f5f5f5; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
-        header { background: var(--dark); color: white; padding: 4rem 2rem; text-align: center; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
-        .btn:hover { opacity: 0.9; }
-        section { margin-bottom: 3rem; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        code { background: #eee; padding: 0.2rem 0.5rem; border-radius: 4px; font-family: 'Consolas', monospace; }
-        .screenshot { width: 100%; border-radius: 5px; margin-top: 1rem; border: 1px solid #ddd; }
-        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
-        ol { padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; }
+        :root { 
+            --primary: #00e676; /* Electric Green */
+            --accent: #0078d4; /* Qt Blue */
+            --bg-dark: #121212; 
+            --card-bg: #1e1e2e;
+            --text-light: #e0e0e0;
+            --text-muted: #b0b0b0;
+            --code-bg: #000000;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            margin: 0; 
+            background: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6; 
+        }
+
+        header { 
+            background: linear-gradient(135deg, #000 0%, var(--card-bg) 100%);
+            padding: 5rem 2rem; 
+            text-align: center; 
+            border-bottom: 3px solid var(--primary);
+        }
+
+        h1 { margin: 0; font-size: 3.5rem; letter-spacing: -1px; color: white; }
+        .tagline { color: var(--primary); font-weight: 500; font-size: 1.2rem; margin-top: 0.5rem; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+        .btn { 
+            display: inline-block; 
+            background: var(--primary); 
+            color: #000; 
+            padding: 0.8rem 2.5rem; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 1.5rem;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 230, 118, 0.5); }
+
+        section { 
+            margin-bottom: 3rem; 
+            background: var(--card-bg); 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+        }
+
+        h2 { color: var(--primary); border-bottom: 1px solid #3d3d5c; padding-bottom: 0.5rem; margin-top: 0; }
+        h3 { color: var(--accent); margin-top: 2rem; }
+
+        .env-list { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 1rem; 
+            list-style: none; 
+            padding: 0; 
+        }
+        .env-item { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; border-top: 2px solid var(--primary); }
+        .env-item strong { display: block; color: var(--primary); font-size: 0.9rem; }
+
+        .setup-steps { list-style: none; padding: 0; }
+        .setup-steps > li { margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 2px solid var(--accent); }
+        
+        .sub-steps { list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem; color: var(--text-muted); }
+        .sub-steps li { margin-bottom: 0.5rem; }
+
+        code { 
+            background: var(--code-bg); 
+            color: #ffab40; 
+            padding: 0.3rem 0.6rem; 
+            border-radius: 4px; 
+            font-family: 'Cascadia Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+        .code-block { display: block; margin: 0.5rem 0; padding: 1rem; line-height: 1.4; border: 1px solid #333; }
+
+        .screenshot { 
+            width: 100%; 
+            border-radius: 8px; 
+            margin-top: 2rem; 
+            border: 1px solid #444;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        .screenshot:hover { opacity: 1; }
+
+        footer { text-align: center; padding: 4rem 2rem; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid #222; }
+        strong { color: white; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>LightUps</h1>
-    <p>A lightweight, open-source UPS monitoring service for Windows.</p>
-    <a href="https://github.com/Light-Ups/LightUps/releases" class="btn">Download Latest Version</a>
+    <p class="tagline">Smart & Lightweight UPS Monitoring for Windows</p>
+    <a href="https://github.com/Light-Ups/LightUps/releases" class="btn">Download Latest Release</a>
 </header>
 
 <div class="container">
     <section>
         <h2>About the Project</h2>
-        <p>LightUps is a dedicated Windows Service and GUI application designed to monitor your Uninterruptible Power Supply (UPS) status. It logs events to the Windows Event Log and ensures your system stays safe during power outages.</p>
+        <p>LightUps is a high-performance Windows Service and C++/Qt GUI application. It monitors your <strong>Uninterruptible Power Supply (UPS)</strong> via standard Windows power APIs, ensuring critical event logging and automated system safety during power fluctuations.</p>
     </section>
 
     <section>
-        <h2>Deployment Configuration (Qt 6.9)</h2>
-        <p>To build the installer for LightUps using the Qt Installer Framework, follow these steps in the <strong>Projects > Deploy Settings</strong> tab of Qt Creator:</p>
-        
-        <ol>
-            <li><strong>CMake Install Step:</strong> Ensure the <code>install</code> target is selected. This ensures that all binaries and assets are moved to the correct staging directory before the installer is created.</li>
-            <li><strong>Custom Process Step:</strong> Add a new "Custom Process Step" to invoke the <code>binarycreator.exe</code>.</li>
-            <li><strong>Command:</strong> Point this to your Qt Installer Framework path: <br> 
-                <code>C:\Qt\Tools\QtInstallerFramework\4.10\bin\binarycreator.exe</code></li>
-            <li><strong>Arguments:</strong> Use the following arguments to create an offline installer: <br>
-                <code>--offline-only -c config\config.xml -p packages lightups.exe</code></li>
-            <li><strong>Working Directory:</strong> Set this to your installer source folder: <br>
-                <code>%{ActiveProject:NativePath}\installer</code></li>
-        </ol>
-
-        <p>This configuration automates the creation of the <code>lightups.exe</code> installer every time you trigger a "Deploy" within Qt Creator.</p>
-        
-        <img src="image_7109e4.png" alt="Qt Creator Deploy Settings" class="screenshot">
+        <h2>Development Environment</h2>
+        <p>The project is built using a specific toolchain to ensure stability and compatibility:</p>
+        <div class="env-list">
+            <div class="env-item"><strong>Framework</strong>Qt 6.9.1 (MinGW 64-bit)</div>
+            <div class="env-item"><strong>IDE</strong>Qt Creator 18.0.1</div>
+            <div class="env-item"><strong>Compiler</strong>MinGW 13.1.0 (64-bit)</div>
+            <div class="env-item"><strong>Build System</strong>CMake 3.30.5 & Ninja 1.12.1</div>
+            <div class="env-item"><strong>Installer</strong>Qt Installer Framework 4.10</div>
+        </div>
+        <img src="Screenshot 2026-01-15 101815.png" alt="Qt Maintenance Tool Configuration" class="screenshot">
     </section>
 
     <section>
-        <h2>Features</h2>
-        <ul>
-            <li><strong>Windows Service:</strong> Runs in the background without needing a user to be logged in.</li>
-            <li><strong>Event Logging:</strong> Integrated with the Windows Event Viewer for professional logging.</li>
-            <li><strong>GUI Monitor:</strong> A clean interface to see real-time status.</li>
-            <li><strong>Auto-Update:</strong> Built-in support for updates via the Maintenance Tool.</li>
+        <h2>Deployment Configuration</h2>
+        <p>To automate the creation of the LightUps installer, follow these steps in <strong>Qt Creator</strong>:</p>
+        
+        <ul class="setup-steps">
+            <li>
+                <strong>1. Select Project</strong><br>
+                In the left sidebar, click on <strong>Projects</strong> and ensure <strong>LightUps</strong> is the active project.
+            </li>
+            <li>
+                <strong>2. Choose Kit</strong><br>
+                Under <strong>Build & Run</strong>, select the correct kit: <strong>Desktop Qt 6.9.1 MinGW 64-bit</strong>.
+            </li>
+            <li>
+                <strong>3. Deploy Settings</strong><br>
+                Open the <strong>Deploy Settings</strong> tab at the top.
+            </li>
+            <li>
+                <strong>4. Configure Deployment Configuration</strong><br>
+                Ensure <strong>Active deployment configuration</strong> is set to <strong>Deploy Configuration</strong>, then add these steps:
+                <ul class="sub-steps">
+                    <li><strong>4a. Build Step:</strong> Add a deploy step for <code>build target all</code>.</li>
+                    <li><strong>4b. Install Step:</strong> Add a deploy step for <code>install</code>.</li>
+                    <li><strong>4c. Custom Process Step:</strong> Add a step with the following details:
+                        <div class="code-block">
+                            <code><strong>Command:</strong> C:\Qt\Tools\QtInstallerFramework\4.10\bin\binarycreator.exe</code><br>
+                            <code><strong>Arguments:</strong> --offline-only -c config\config.xml -p packages lightups.exe</code><br>
+                            <code><strong>Working Directory:</strong> %{ActiveProject:NativePath}\installer</code>
+                        </div>
+                    </li>
+                </ul>
+            </li>
         </ul>
+        <img src="Screenshot 2026-01-14 114503.png" alt="Qt Creator Deploy Settings" class="screenshot">
     </section>
 
     <section>
-        <h2>Open Source & License</h2>
-        <p>This project is licensed under the <strong>AGPL v3</strong>. We believe in transparency and community-driven development.</p>
-        <p>Source code is available at: <a href="https://github.com/Light-Ups/LightUps">github.com/Light-Ups/LightUps</a></p>
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Windows Service:</strong> Runs in the background without needing a user login.</li>
+            <li><strong>Event Logging:</strong> Professional integration with the Windows Event Viewer.</li>
+            <li><strong>Qt 6.9 UI:</strong> Clean and responsive real-time status monitoring.</li>
+            <li><strong>Auto-Update Support:</strong> Compatible with the Qt Maintenance Tool for easy updates.</li>
+        </ul>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 LightUps Project. Built with Qt 6.9 and ❤️ for Open Source.
+    &copy; 2026 LightUps Project. Developed with <strong>Qt 6.9.1</strong> & <strong>C++</strong>.<br>
+    Licensed under AGPL v3. Source available on <a href="https://github.com/Light-Ups/LightUps" style="color: var(--primary);">GitHub</a>.
 </footer>
 
 </body>
